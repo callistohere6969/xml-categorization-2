@@ -1,0 +1,11 @@
+normalized_error
+"<![CDATA[The content of element type 'ce:author' is incomplete, it must match '(ce:given-name?,ce:surname,(ce:suffix)?,(ce:degrees)?,(ce:roles)?,(ce:e-address)*)']]>"
+"Element type 'fontstyle21' must be declared."
+"An element with the identifier 'fig1' must appear in the document."
+"Attribute value 'sec-1' of type ID must be unique within the document."
+"The content of elements must consist of well-formed character data or markup."
+"Element type 'abstract' must be declared."
+"The entity 'nbsp2' was referenced, but not declared."
+"Attribute 'id' must be declared for element type 'ce:figure'."
+"The element type 'ce:section' must be terminated by the matching end-tag '</ce:section>'."
+"Value 'invalid-date' is not facet-valid with respect to pattern for type 'dateType'."

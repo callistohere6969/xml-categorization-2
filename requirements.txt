@@ -1,0 +1,19 @@
+# XML Error Categorization - Hybrid Approach Requirements
+
+# Core dependencies
+pandas>=1.5.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# OpenAI SDK (works with both OpenAI and OpenRouter)
+openai>=1.0.0
+
+# Langfuse for usage tracking and observability
+langfuse>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+
+# Optional: for validation and testing
+pytest>=7.4.0
