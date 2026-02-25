@@ -1,57 +1,57 @@
 [
-    {
-        "id": 0,
-        "name": "Mismatch In Graphic Asset Declaration",
-        "description": "Errors related to incorrect or missing graphic asset declarations in XML. This includes mismatches between declared and actual graphic file references, incorrect graphic formats, or missing graphic metadata."
-    },
-    {
-        "id": 1,
-        "name": "Missing Referred Id In Element",
-        "description": "Errors where an element references an ID that does not exist in the document. This includes references to missing figures, tables, sections, or other elements that should have been defined but are not present."
-    },
-    {
-        "id": 2,
-        "name": "Incorrect Element Content Structure",
-        "description": "Errors where the content structure of an element does not match the expected schema. This includes wrong child elements, incorrect ordering of elements, or elements appearing in unexpected contexts."
-    },
-    {
-        "id": 3,
-        "name": "Invalid Id Attribute Value",
-        "description": "Errors related to ID attribute values that don't conform to XML naming rules or schema constraints. This includes IDs with invalid characters, incorrect format, or violating naming conventions."
-    },
-    {
-        "id": 4,
-        "name": "Invalid Para Or Character Style Present",
-        "description": "Errors where paragraph or character styles are not declared in the DTD or schema. This includes custom font styles, text formatting styles, or style references that haven't been properly defined."
-    },
-    {
-        "id": 5,
-        "name": "Required Element Missing",
-        "description": "Errors where mandatory elements according to the schema are not present. This includes incomplete element content where required child elements are missing or the element structure is incomplete."
-    },
-    {
-        "id": 6,
-        "name": "Duplicate Id Attribute",
-        "description": "Errors where the same ID attribute value is used multiple times in the document. Each ID must be unique within the XML document scope."
-    },
-    {
-        "id": 7,
-        "name": "Undeclared Entity Present",
-        "description": "Errors where entities are used in the document but have not been declared in the DTD or are not standard XML entities. This includes custom entity references without proper declaration."
-    },
-    {
-        "id": 8,
-        "name": "Attribute Id Is Missing",
-        "description": "Errors where an element that requires an ID attribute does not have one. This is different from invalid ID values - here the ID attribute is completely absent when it should be present."
-    },
-    {
-        "id": 9,
-        "name": "Unclosed Element Tag",
-        "description": "Errors related to XML elements that are not properly closed. This includes missing closing tags, mismatched opening and closing tags, or improperly nested elements."
-    },
-    {
-        "id": 10,
-        "name": "Invalid Attribute Format",
-        "description": "Errors where attribute values do not conform to the expected format or data type. This includes incorrect date formats, invalid enumeration values, or attributes with values outside allowed ranges."
-    }
+  {
+    "final_category_id": 0,
+    "category_name": "Mismatch In Graphic Asset Declaration",
+    "description": "Errors where graphic assets are misaligned between XML declaration and Illust section: 'file missing in Illust', 'file missing in XML declaration', 'found in Illust but missing in XML', 'Mismatch in files'. Includes asset types: figs, fx, ga, gr, mmc, sc. Examples: grf1 file missing, extra fx file in XML."
+  },
+  {
+    "final_category_id": 1,
+    "category_name": "Missing Referred Id In Element",
+    "description": "Errors where an element with a specific identifier must appear in the document but is missing. Key phrases: 'An element with the identifier' followed by ID 'must appear in the document'. IDREF target not found. Examples: element with identifier au1 must appear, element with identifier fig1 must appear, element with identifier tab1 must appear, element with identifier enun_H1 must appear."
+  },
+  {
+    "final_category_id": 2,
+    "category_name": "Incorrect Element Content Structure",
+    "description": "Errors where element content must match a required pattern but does not: 'The content of element type X must match'. Child sequence or structure violates schema requirements. Examples: content of element type article must match, content of element type sec must match, content must follow specific pattern with children."
+  },
+  {
+    "final_category_id": 3,
+    "category_name": "Invalid Id Attribute Value",
+    "description": "Errors where ID/IDREF/IDREFS attribute values are malformed: NCName violations, spaces in IDREFS, invalid naming rules. Examples: 'ID value contains space', 'IDREFS value must be NMTOKEN', 'NCName constraint violation', identifiers with invalid characters."
+  },
+  {
+    "final_category_id": 4,
+    "category_name": "Invalid Para Or Character Style Present",
+    "description": "Errors where element types (tags/elements) are not declared in the DTD: 'Element type \"[name]\" must be declared'. These are undeclared ELEMENT TYPES, not entities. The element tag itself needs DTD declaration. Common examples: custom elements like fontstyle21, Heading2Char, listparagraph, htmlpreformatted, missing_para, SubtleEmphasis, anchor-text, conflictofinterest, displayeqntext, keywordsjel, pargraph, stlt, tab, tclass, text, unknown-tag, unknownfont, unsupportedsymbol. These are typically custom style names, formatting tags, and paragraph styles. NOT about entity references with ampersands (&entity;) which are category 7."
+  },
+  {
+    "final_category_id": 5,
+    "category_name": "Required Element Missing",
+    "description": "Errors where element content is incomplete because required child elements are missing: 'The content of element type X is incomplete, it must match pattern'. Key word is INCOMPLETE. Required elements are absent. Examples: content of element type article is incomplete, content of element type sec is incomplete, missing required child like title or body."
+  },
+  {
+    "final_category_id": 6,
+    "category_name": "Duplicate Id Attribute",
+    "description": "Errors where ID attribute values are duplicated: 'Attribute value of type ID must be unique', 'ID already defined', duplicate identifier in document. Examples: ID value fig1 used multiple times, duplicate id attribute value sec1."
+  },
+  {
+    "final_category_id": 7,
+    "category_name": "Undeclared Entity Present",
+    "description": "Errors about entity references (&entity;) that are problematic: 'The entity \"[name]\" was referenced, but not declared', 'The reference to entity \"[name]\" must end with the ';' delimiter', 'The entity name must immediately follow the '&' in the entity reference'. These are specifically about ENTITY REFERENCES using ampersands (&Amp;, &NBSP;, &ndash;, &sdot;, &Wu;), not element tags. Includes SAXParseException messages about entity references. Examples: entity Amp not declared, entity NBSP not declared, reference to ndash must end with semicolon, entity name must follow ampersand."
+  },
+  {
+    "final_category_id": 8,
+    "category_name": "Attribute Id Is Missing",
+    "description": "Errors where the id attribute specifically is required but not provided or not declared: 'Attribute \"id\" is required and must be specified for element type', 'Attribute \"id\" must be declared for element type'. Specifically about ID attribute only, not other attributes like month, year, type, xml:lang, or refid. Examples: id required for bib-reference, id required for correspondence, id required for footnote, id must be declared for ce:label."
+  },
+  {
+    "final_category_id": 9,
+    "category_name": "Unclosed Element Tag",
+    "description": "Errors about element tags not being properly closed or terminated: 'The element type \"[name]\" must be terminated by the matching end-tag', 'The end-tag for element type \"[name]\" must end with a '>' delimiter', closing tags missing or malformed. Includes SAXParseException messages about end-tag delimiters and termination. Key phrases: 'must be terminated', 'matching end-tag', 'end-tag', '>' delimiter. Examples: ce:author must be terminated by matching end-tag, end-tag for ce:author must end with > delimiter."
+  },
+  {
+    "final_category_id": 10,
+    "category_name": "Invalid Attribute Format",
+    "description": "Errors where attribute values have incorrect format or don't match required data type constraints: 'Attribute \"[name]\" with value \"[value]\" must have a value from the list', 'Attribute value \"[value]\" of type NMTOKEN must be a name token'. Focuses on attribute VALUE format problems, not element declarations. Examples: view attribute with value 'cs' or 'Cs' must be from enumeration list, attribute value '23–26' must be valid NMTOKEN (name token), attribute values violating format constraints or containing invalid characters like dashes in NMTOKEN."
+  }
 ]
